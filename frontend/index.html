@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pattern Matching</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/components.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <label class="btn">
+      <input id="file-input" type="file" accept="image/png,image/jpeg" hidden />
+      Upload
+    </label>
+    <button id="tool-select" class="btn tool active" data-tool="select">Select</button>
+    <button id="tool-rect" class="btn tool" data-tool="rect">Draw Rect</button>
+    <button id="tool-rrect" class="btn tool" data-tool="rrect">Draw Rotated Rect</button>
+    <span class="sep"></span>
+    <label>Algorithm:
+      <select id="algo-select"></select>
+    </label>
+    <label>Threshold:
+      <input id="threshold" type="number" min="0" max="1" step="0.01" value="0.85" style="width: 5rem" />
+    </label>
+    <button id="quick-mark" class="btn primary">Quick Mark</button>
+    <button id="save-json" class="btn">Save JSON</button>
+    <button id="clear-all" class="btn danger">Clear All</button>
+  </header>
+  <main class="workspace">
+    <section class="canvas-area">
+      <canvas id="board" width="1024" height="640"></canvas>
+    </section>
+    <aside class="panel">
+      <h2>Patterns</h2>
+      <table id="pattern-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Role</th>
+            <th>Shape</th>
+            <th>cx</th>
+            <th>cy</th>
+            <th>w</th>
+            <th>h</th>
+            <th>angle</th>
+            <th>score</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </aside>
+  </main>
+  <footer class="statusbar">
+    <span id="status-cursor">cursor: -, -</span>
+    <span id="status-zoom">zoom: 100%</span>
+    <span id="status-selected">selected: -</span>
+    <span id="status-msg"></span>
+  </footer>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
