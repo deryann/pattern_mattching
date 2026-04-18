@@ -1,0 +1,38 @@
+.btn {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  padding: 0.35rem 0.75rem; border: 1px solid #3b424a; border-radius: 4px;
+  background: #2d333b; color: #f6f8fa; cursor: pointer; font-size: 0.875rem;
+}
+.btn:hover { background: #3b424a; }
+.btn.primary { background: #1f6feb; border-color: #1f6feb; }
+.btn.primary:hover { background: #388bfd; }
+.btn.danger { background: #b42318; border-color: #b42318; }
+.btn.danger:hover { background: #d92d20; }
+.btn.tool.active { background: #388bfd; border-color: #388bfd; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+#pattern-table {
+  width: 100%; border-collapse: collapse; font-size: 0.75rem;
+}
+#pattern-table th, #pattern-table td {
+  padding: 0.25rem 0.35rem; border-bottom: 1px solid #eaeef2; text-align: right;
+  white-space: nowrap;
+}
+#pattern-table th { background: #f6f8fa; position: sticky; top: 0; }
+#pattern-table td:nth-child(1), #pattern-table td:nth-child(2),
+#pattern-table td:nth-child(3), #pattern-table td:nth-child(4) { text-align: left; }
+#pattern-table tbody tr { cursor: pointer; }
+#pattern-table tbody tr:hover { background: #f6f8fa; }
+#pattern-table tbody tr.selected { background: #ddf4ff; }
+
+.role-template { color: #1f6feb; font-weight: 600; }
+.role-match { color: #1a7f37; font-weight: 600; }
+
+.toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  background: rgba(36, 41, 47, 0.95); color: #fff; padding: 0.5rem 1rem;
+  border-radius: 6px; font-size: 0.875rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 1000;
+}
+.toast.show { opacity: 1; }
+.toast.error { background: #b42318; }
